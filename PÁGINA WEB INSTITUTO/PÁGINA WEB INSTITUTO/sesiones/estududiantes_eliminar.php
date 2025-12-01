@@ -1,0 +1,8 @@
+<?php
+require '../config/db.php';
+$id = $_GET['id'];
+$sql = "DELETE FROM estudiantes WHERE id = ?";
+$stmt= $pdo->prepare($sql);
+$stmt->execute([$id]);
+header("Location: ../publico/index.php");
+?>
